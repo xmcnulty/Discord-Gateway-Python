@@ -28,7 +28,3 @@ class Event:
             op: self.__op_code.value,
             d: self.__data
         }
-    
-event = Event(OpCode.IDENTIFY, {})
-
-print(event.json)

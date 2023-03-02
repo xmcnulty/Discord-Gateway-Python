@@ -1,6 +1,37 @@
 import json
 
 class User:
+    """
+A wrapper class for Discord API User object.
+
+This class provides a way to store and manipulate User object attributes returned by Discord API.
+
+Attributes:
+id (str): The ID of the user.
+username (str): The username of the user.
+discriminator (str): The discriminator of the user.
+avatar (str): The avatar URL of the user.
+
+Properties:
+bot (bool): Whether the user is a bot or not.
+system (bool): Whether the user is a Discord system user or not.
+mfa_enabled (bool): Whether the user has two-factor authentication enabled on their account or not.
+locale (str): The user's chosen language option.
+verified (bool): Whether the user's email has been verified or not.
+email (str): The email associated with the user's account.
+flags (int): The user's flags.
+premium_type (int): The type of Nitro subscription on a user's account.
+public_flags (int): The user's public flags.
+banner (str): The URL of the user's banner image.
+accent_color (int): The user's chosen accent color.
+
+Methods:
+dict() -> dict: Returns a dictionary containing all the object attributes and their respective values.
+json() -> str: Returns a JSON representation of the object attributes and their respective values.
+
+from_dict(user_dict: dict) -> User: Creates a new User object from a dictionary representation of the object attributes and their respective values.
+    """
+
     def __init__(
             self, 
             id: str, 
@@ -225,8 +256,3 @@ class User:
             user.accent_color = user_dict["accent_color"]
 
         return user
-    
-user = User(username="test", discriminator="0000", avatar="test", id="1234567890")
-user.bot = True
-
-print(user.json())

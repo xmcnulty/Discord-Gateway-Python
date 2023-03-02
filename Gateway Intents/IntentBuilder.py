@@ -1,4 +1,48 @@
 class IntentBuilder:
+    """
+    A class for building Intent values for the Discord API.
+
+    Intents allow you to specify which events your bot should receive from Discord.
+    You can create an IntentBuilder object and use its methods to add the desired intents.
+
+    To get the final Intent value, call the `build()` method.
+
+    Note:
+        This class is specific to the Discord API and should not be used for other purposes.
+
+    Attributes:
+        __intent (int): The final Intent value.
+
+    Methods:
+        add_guilds: Adds the guilds intent.
+        add_guild_members: Adds the guild members intent.
+        add_guild_moderation: Adds the guild moderation intent.
+        add_guild_emojis_and_stickers: Adds the guild emojis and stickers intent.
+        add_guild_integrations: Adds the guild integrations intent.
+        add_guild_webhooks: Adds the guild webhooks intent.
+        add_guild_invites: Adds the guild invites intent.
+        add_guild_voice_states: Adds the guild voice states intent.
+        add_guild_presences: Adds the guild presences intent.
+        add_guild_messages: Adds the guild messages intent.
+        add_guild_message_reactions: Adds the guild message reactions intent.
+        add_guild_message_typing: Adds the guild message typing intent.
+        add_direct_messages: Adds the direct messages intent.
+        add_direct_message_reactions: Adds the direct message reactions intent.
+        add_direct_message_typing: Adds the direct message typing intent.
+        add_guild_schedule_events: Adds the guild schedule events intent.
+        add_auto_moderation_configuration: Adds the auto-moderation configuration intent.
+        add_auto_moderation_execution: Adds the auto-moderation execution intent.
+        add_all: Adds all available intents.
+        build: Gets the final Intent value.
+
+    Usage example:
+
+        # Create an IntentBuilder object and add the desired intents
+        intents = IntentBuilder().add_guilds().add_guild_members().add_guild_messages().build()
+
+        # Use the intents variable when creating the bot client
+        client = discord.Client(intents=intents)
+    """
     def __init__(self) -> None:
         self.__intent = 0
 
